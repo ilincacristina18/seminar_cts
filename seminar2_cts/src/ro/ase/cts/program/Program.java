@@ -5,18 +5,17 @@ import java.util.List;
 
 import ro.ase.cts.clase.Aplicant;
 import ro.ase.cts.clase.readers.EleviReader;
-import ro.ase.cts.clase.readers.StudentiReader;
 import ro.ase.cts.clase.readers.Readable;
 
 public class Program {
-	public static List<Aplicant> citesteAplicanti(String numeFisier, Readable reader) throws FileNotFoundException{
-		return reader.readAplicanti(numeFisier);
+	public static List<Aplicant> citesteAplicanti(Readable reader) throws FileNotFoundException{
+		return reader.readAplicanti();
 	}
 
 	public static void main(String[] args) {
 		List<Aplicant> listaAplicanti;
 		try {
-			listaAplicanti = citesteAplicanti("elevi.txt", new EleviReader());
+			listaAplicanti = citesteAplicanti(new EleviReader("elevi.txt"));
 			for(Aplicant aplicant:listaAplicanti)
 				System.out.println(aplicant.toString());
 		} catch (FileNotFoundException e) {
