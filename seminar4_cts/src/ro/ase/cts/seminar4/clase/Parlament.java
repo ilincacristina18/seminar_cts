@@ -49,8 +49,18 @@ public class Parlament {
 
 	@Override
 	public String toString() {
-		return "Parlament [tara=" + tara + ", nrParlamentari=" + nrParlamentari + ", durataMandat=" + durataMandat
-				+ ", denumireSediu=" + denumireSediu + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Parlament [tara=");
+		builder.append(tara);
+		builder.append(", nrParlamentari=");
+		builder.append(nrParlamentari);
+		builder.append(", durataMandat=");
+		builder.append(durataMandat);
+		builder.append(", denumireSediu=");
+		builder.append(denumireSediu);
+		builder.append("]");
+		return builder.toString();
 	}
 
+	
 }

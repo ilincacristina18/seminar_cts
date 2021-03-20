@@ -1,5 +1,6 @@
 package ro.ase.cts.seminar4.program;
 
+import ro.ase.cts.seminar4.clase.Cinema;
 import ro.ase.cts.seminar4.clase.Parlament;
 import ro.ase.cts.seminar4.clase.ParlamentLazy;
 
@@ -27,6 +28,12 @@ public class Main {
 		
 		System.out.println(parlamentLazy1.toString());
 		System.out.println(parlamentLazy2.toString());
+		System.out.println("---------------------------------------");
+		
+		Cinema cinema1 = Cinema.getInstance("Cinema1", 10, 30);
+		Cinema cinema2 = Cinema.getInstance("Cinema2", 5, 15);
+		System.out.println(cinema1.toString());
+		System.out.println(cinema2.toString());
 		System.out.println("---------------------------------------");
 	}
 }

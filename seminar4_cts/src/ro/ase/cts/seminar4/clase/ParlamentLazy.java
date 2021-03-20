@@ -10,7 +10,9 @@ public class ParlamentLazy {
 	
 	public static ParlamentLazy getInstance(String tara, int nrParlamentari, int durataMandat, String denumireSediu) {
 		if(parlamentLazy == null) {
+			synchronized (ParlamentLazy.class) {
 			parlamentLazy = new ParlamentLazy(tara, nrParlamentari, durataMandat, denumireSediu);
+		}
 		}
 		return parlamentLazy;
 	}
@@ -46,11 +48,23 @@ public class ParlamentLazy {
 		this.denumireSediu = denumireSediu;
 	}
 
+
 	@Override
 	public String toString() {
-		return "ParlamentLazy [tara=" + tara + ", nrParlamentari=" + nrParlamentari + ", durataMandat=" + durataMandat
-				+ ", denumireSediu=" + denumireSediu + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("ParlamentLazy [tara=");
+		builder.append(tara);
+		builder.append(", nrParlamentari=");
+		builder.append(nrParlamentari);
+		builder.append(", durataMandat=");
+		builder.append(durataMandat);
+		builder.append(", denumireSediu=");
+		builder.append(denumireSediu);
+		builder.append("]");
+		return builder.toString();
 	}
+
+	
 	
 	
 	
