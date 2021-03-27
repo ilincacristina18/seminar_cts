@@ -1,6 +1,7 @@
 package ro.ase.cts.program;
 
 import ro.ase.cts.clase.Factory;
+import ro.ase.cts.clase.FactorySingleton;
 import ro.ase.cts.clase.PersonalMedical;
 import ro.ase.cts.clase.TipPersonal;
 
@@ -15,6 +16,9 @@ public class Main {
 		
 		System.out.println(medic1);
 		System.out.println(asistent1);
+		
+		PersonalMedical medic2 = FactorySingleton.getInstance().create(TipPersonal.MEDIC, "Radu", 6000);
+		System.out.println(medic2);
 	}
 
 }
